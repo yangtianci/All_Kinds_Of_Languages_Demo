@@ -1,0 +1,139 @@
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> SVG_Demo </title>
+</head>
+<body>
+
+<h2>SVG 内置图形展示</h2>
+
+<list>
+	<li>
+		<h3>SVG_线_line</h3>
+			<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	  		<line x1="30" y1="-20" x2="200" y2="200" stroke="orange" style="stroke-width:20"/>
+	  		<line x1="60" y1="-20" x2="230" y2="200"stroke="orange"style="stroke-width:15"/>
+	  		<line x1="90" y1="-20" x2="260" y2="200"stroke="orange"style="stroke-width:10"/>
+</svg> 
+	</li>
+	<hr>
+	<li>
+		<h3>SVG_折线_polyline</h3>
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		  <polyline points="0,40 40,40 40,80 80,80 80,120 120,120 120,160" stroke="orange" style="fill:white;stroke-width:4" />
+		</svg>
+	</li>
+	<hr>
+	<li>
+		<h3>SVG_路径_path</h3>
+
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		  <path id="lineAB" d="M 100 350 l 150 -300" stroke="red"
+		  stroke-width="3" fill="none" />
+		  <path id="lineBC" d="M 250 50 l 150 300" stroke="red"
+		  stroke-width="3" fill="none" />
+		  <path d="M 175 200 l 150 0" stroke="green" stroke-width="3"
+		  fill="none" />
+		  <path d="M 100 350 q 150 -300 300 0" stroke="blue"
+		  stroke-width="5" fill="none" />
+		  <!-- Mark relevant points -->
+		  <g stroke="black" stroke-width="3" fill="black">
+		    <circle id="pointA" cx="100" cy="350" r="3" />
+		    <circle id="pointB" cx="250" cy="50" r="3" />
+		    <circle id="pointC" cx="400" cy="350" r="3" />
+		  </g>
+		  <!-- Label the points -->
+		  <g font-size="30" font="sans-serif" fill="black" stroke="none"
+		  text-anchor="middle">
+		    <text x="100" y="350" dx="-30">A</text>
+		    <text x="250" y="50" dy="-10">B</text>
+		    <text x="400" y="350" dx="30">C</text>
+		  </g>
+		</svg>
+
+	</li>
+	<hr>
+	<li>
+		<h3>SVG_矩形_rect</h3>
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+ 			 <rect width="200" height="100" stroke="orange" fill="yellow" style="stroke-width:30;"/>
+		</svg> 
+	</li>
+	<hr>
+	<li>
+		<h3>SVG_多边形_polygon</h3>
+			<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  				<polygon points="100,10 40,180 190,60 10,60 160,180"fill="orange"style="stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+</svg> 
+	</li>
+	<hr>
+	<li>
+		<h3>SVG_圆形_circle</h3>
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<circle cx="100" cy="70" r="50" stroke="orange" stroke-width="30" fill="yellow" />
+	</svg>
+	</li>
+	<hr>
+	
+	<li>
+		<h3>SVG_椭圆_ellipse</h3>
+
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		  <ellipse cx="240" cy="100" rx="220" ry="30" style="fill:purple"/>
+		  <ellipse cx="220" cy="70" rx="190" ry="20" style="fill:lime"/>
+		  <ellipse cx="210" cy="45" rx="170" ry="15" style="fill:yellow"/>
+		</svg>
+
+	</li>
+	<hr>
+	
+	<li>
+		<h3>SVG_文本_text</h3>
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  			<text x="100" y="30" fill="orange" transform="rotate(30 20,40)">demo text</text>
+  			<text x="50" y="30" fill="orange" transform="rotate(60 50,10)">demo text</text>
+  			<text x="80" y="60" fill="orange">demo text</text>
+		</svg> 
+	</li>
+	<hr>
+	<li>
+		<h3>SVG_图像滤镜_defs_filter</h3>
+		 <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  			<defs>
+    			<filter id="f1" x="0" y="0">
+      				<feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+    			</filter>
+  			</defs>
+  			<rect width="90" height="90" stroke="green" stroke-width="3"fill="yellow" filter="url(#f1)" />
+		</svg> 
+
+
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		  <defs>
+		    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+		      <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+		      <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+		    </linearGradient>
+		  </defs>
+		  <ellipse cx="200" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+		  <text fill="#ffffff" font-size="45" font-family="Verdana" x="150" y="86">demo</text>
+		</svg>
+
+	</li>
+	
+</list>
+
+
+	
+
+
+
+
+</body>
+</html>
+
+
