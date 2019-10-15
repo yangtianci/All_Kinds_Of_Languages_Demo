@@ -20,7 +20,7 @@ import sys
 ###################### GUI 相关 
 
 
-def GUIShowMethod(WrapperArr):
+def GUIShowMethod(WrapperArr, AimCount):
 
 
 	app = wx.App(False)
@@ -29,6 +29,9 @@ def GUIShowMethod(WrapperArr):
 	pannel = wx.ScrolledWindow(frame, wx.ID_ANY, pos=(10,10), size=(300,300), name="PanelNameStr") 
 	pannel.SetScrollbars(0, 20, 20, 60)
 
+
+	aimCountStr = '检索到 %d 篇' % AimCount 
+	label = wx.TextCtrl ( pannel,pos=(20, 10),size=(600,30),value = aimCountStr,style = wx.TE_READONLY | wx.TE_CENTER )
 
 	testView(WrapperArr,pannel) 
 
@@ -42,7 +45,7 @@ def GUIShowMethod(WrapperArr):
 
 def testView(WrapperArr,superV):
 
-	TotalY = 15 
+	TotalY = 55 
 
 	for x in xrange(0,len(WrapperArr)):
 
@@ -119,7 +122,7 @@ browser.get("https://app.yinxiang.com/Login.action?targetUrl=%2FHome.action%3Flo
 browser.find_element_by_id("username").send_keys("624946274@qq.com")
 browser.find_element_by_id("loginButton").click() 
 
-# time.sleep(3)
+time.sleep(1)
 
 browser.find_element_by_id("password").send_keys(pwd) 
 browser.find_element_by_id("loginButton").click() 
@@ -240,7 +243,8 @@ Arr =  EnumeNoteMethod()
 
 print '\n'
 
-wrapperArr = []
+wrapperArr = [] 
+aimcount = 0 
  
 for x in xrange(0,len(ebbinArr)):
 
@@ -271,6 +275,13 @@ for x in xrange(0,len(ebbinArr)):
 	innerStr = '  .  '.join(textObj)
 	innerArr.append(textObj) 
 
+	for x in xrange(0,len(textObj)):
+		resStr = textObj[x]
+		if resStr == '=================':
+			aimcount += 1
+			pass
+		pass
+
 	wrapperArr.append(innerArr) 
 
 	pass
@@ -281,7 +292,7 @@ browser.quit()
 
 
 # GUI 展示 
-GUIShowMethod(wrapperArr)  
+GUIShowMethod(wrapperArr,aimcount)  
 
 
 print '\n' 
