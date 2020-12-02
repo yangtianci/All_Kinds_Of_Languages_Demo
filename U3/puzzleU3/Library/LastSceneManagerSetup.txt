@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Creator Kit - Puzzle/Scenes/UserCreated/newLevel.unity
+- path: "Assets/\u8F6F\u5DE5-Palace.unity"
   isLoaded: 1
   isActive: 1
   isSubScene: 0
